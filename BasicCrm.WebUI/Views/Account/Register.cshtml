@@ -6,7 +6,7 @@
         <div class="col-md-6">
             <div class="card">
                 <header class="card-header">
-                    <a href="" class="float-right btn btn-outline-primary mt-1">Giriş Yap</a>
+                    <a asp-controller="Account" asp-action="Login" class="float-right btn btn-outline-primary mt-1">Giriş Yap</a>
                     <h4 class="card-title mt-2">Kayıt Ol</h4>
                 </header>
                 <article class="card-body">
@@ -50,7 +50,7 @@
 
                     </form>
                 </article> <!-- card-body end .// -->
-                <div class="border-top card-body text-center">Hesabınız var mı? <a href="">Giriş Yap</a></div>
+                <div class="border-top card-body text-center">Hesabınız var mı? <a asp-controller="Account" asp-action="Login">Giriş Yap</a></div>
             </div> <!-- card.// -->
         </div> <!-- col.//-->
 
