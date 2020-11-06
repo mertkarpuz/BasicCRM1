@@ -12,5 +12,6 @@ namespace BusinessLogicLayer.Abstract
         void Create(Customer entity);
         void Update(Customer entity);
         void Delete(Customer entity);
+        public void deleteByIdWithSP(int id);
     }
 }

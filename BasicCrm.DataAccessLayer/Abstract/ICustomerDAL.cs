@@ -7,6 +7,6 @@ namespace BasicCrm.DataAccessLayer.Abstract
 {
     public interface ICustomerDAL:IRepository<Customer>
     {
-       
+        public void deleteByIdWithSP(int id);
     }
 }

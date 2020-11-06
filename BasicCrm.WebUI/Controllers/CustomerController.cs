@@ -57,7 +57,7 @@ namespace BasicCrm.WebUI.Controllers
             var returnedValue = _customerService.GetById((int)id);
             if (returnedValue != null)
             {
-                _customerService.Delete(returnedValue);
+                _customerService.deleteByIdWithSP(returnedValue.Id);
                 TempData["notification"] = Toastr.Alert("Müşteri Silindi!", "Başarılı!", NotificationType.warning);
             }
             else

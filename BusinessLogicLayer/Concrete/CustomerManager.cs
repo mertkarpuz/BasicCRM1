@@ -25,6 +25,11 @@ namespace BusinessLogicLayer.Concrete
             _customerDal.Delete(entity);
         }
 
+        public void deleteByIdWithSP(int id)
+        {
+            _customerDal.deleteByIdWithSP(id);
+        }
+
         public List<Customer> GetAll()
         {
             return _customerDal.GetAll();
