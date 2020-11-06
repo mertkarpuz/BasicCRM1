@@ -1,0 +1,64 @@
+﻿@{
+    ViewData["Title"] = "UpdateCustomer";
+}
+
+@model CustomerModel
+
+<h4 class="mb-5 col-12">Müşteri Ekleme Sayfası</h4>
+
+<form class="col-12" asp-controller="Customer" asp-action="UpdateCustomer" method="post">
+    <div class="form-group row">
+
+        <input type="hidden" name="Id" value="@Model.Id" />
+        <label for="text" asp-for="@Model.Name" class="col-2 col-form-label"></label>
+        <div class="col-4">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </div>
+                <input id="Name" name="Name" asp-for="Name" value="@Model.Name" type="text" class="form-control" required="required">
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="text1" asp-for="@Model.Surname" class="col-2 col-form-label"></label>
+        <div class="col-4">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-user"></i>
+                    </div>
+                </div>
+                <input id="Surname" name="Surname" asp-for="Surname" value="@Model.Surname" type="text" class="form-control" required="required">
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-2  col-form-label" asp-for="@Model.Address" for="textarea"></label>
+        <div class="col-4">
+            <textarea id="Address" name="Address" asp-for="Address" value="@Model.Address" cols="40" rows="5" class="form-control" required="required"></textarea>
+        </div>
+    </div>
+    <div class="form-group row">
+        <label for="text" asp-for="@Model.Phone" class="col-2 col-form-label"></label>
+        <div class="col-4">
+            <div class="input-group">
+                <div class="input-group-prepend">
+                    <div class="input-group-text">
+                        <i class="fa fa-phone"></i>
+                    </div>
+                </div>
+                <input id="Phone" name="Phone" asp-for="Phone" value="@Model.Phone" type="text" class="form-control" required="required">
+            </div>
+        </div>
+    </div>
+    <div class="form-group row">
+        <div class="offset-2 col-4">
+            <button type="submit" class="btn btn-secondary col-12">Güncelle</button>
+        </div>
+    </div>
+</form>
+
+

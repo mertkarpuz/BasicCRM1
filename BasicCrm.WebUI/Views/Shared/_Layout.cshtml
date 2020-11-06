@@ -1,0 +1,51 @@
+﻿<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="/modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="/modules/toastr/build/toastr.min.css" rel="stylesheet" />
+    <link href="~/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.10.22/datatables.min.css" />
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables.css">
+    <link rel="stylesheet" type="text/css" href="http://ajax.aspnetcdn.com/ajax/jquery.dataTables/1.9.0/css/jquery.dataTables_themeroller.css">
+    <title>BasicCrm</title>
+</head>
+<body>
+    <div class="container"><partial name="_navbar" /></div>
+    <div class="container mt-5">
+
+        @RenderBody()
+    </div>
+
+    <div class="container"><partial name="_footer" /></div>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/modules/jquery/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="/modules/bootstrap/dist/js/bootstrap.min.js"></script>
+    <script src="/modules/toastr/build/toastr.min.js"></script>
+    <script>
+        toastr.options.preventDuplicates = false;
+        toastr.options.closeButton = true;
+        toastr.options.positionClass = "toast-bottom-right";
+        toastr.options.debug = false;
+        toastr.options.showMethod = "fadeIn";
+        toastr.options.hideMethod = "fadeOut";
+        toastr.options.timeOut = 2500;
+    </script>
+
+
+
+    @RenderSection("Scripts", false)
+
+    @if (TempData["notification"] != null)
+    {
+        <script>
+
+            @Html.Raw(TempData["notification"])
+        </script>
+    }
+
+</body>
+</html>

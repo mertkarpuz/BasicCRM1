@@ -1,0 +1,27 @@
+﻿
+<nav class="navbar navbar-expand-md navbar-light bg-light">
+    <a asp-controller="Home" asp-action="Index" class="navbar-brand">Basic CRM</a>
+    <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarCollapse">
+        <div class="navbar-nav">
+            <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active">Anasayfa</a>
+            <a asp-controller="Customer" asp-action="GetAllCustomers" class="nav-item nav-link">Müşteri İşlemleri</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+            <a class="nav-item nav-link">Hoş geldiniz @User.Identity.Name</a>
+                <a asp-controller="Account" asp-action="Logout" class="nav-item nav-link">Oturumu kapat</a>
+            }
+            else
+            {
+            <a asp-controller="Account" asp-action="Login" class="nav-item nav-link">Giriş</a>
+            <a asp-controller="Account" asp-action="Register" class="nav-item nav-link">Kayıt Ol</a>
+            }
+        </div>
+        
+    </div>
+</nav>
